@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sales_commission_user,access.sales.commission.user,model_sales_commission,base.group_user,1,1,1,1
+access_sales_commission_line_user,access.sales.commission.line.user,model_sales_commission_line,base.group_user,1,1,1,1
+access_sales_commission_approval_wizard_user,access.sales.commission.approval.wizard.user,model_sales_commission_approval_wizard,base.group_user,1,1,1,1
+access_sales_commission_report_wizard_user,access.sales.commission.report.wizard.user,model_sales_commission_report_wizard,base.group_user,1,1,1,1

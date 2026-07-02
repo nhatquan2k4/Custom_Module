@@ -1,0 +1,20 @@
+{
+    "name": "Library",
+    "version": "1.0",
+    "category": "Practice",
+    "summary": "Small library management app for Odoo practice",
+    "depends": ["base"],
+    "data": [
+        "security/library_security.xml",
+        "security/ir.model.access.csv",
+        "security/library_record_rules.xml",
+        "views/library_borrow_wizard_views.xml",
+        "views/library_category_views.xml",
+        "views/library_book_views.xml",
+        "views/library_member_views.xml",
+        "views/library_loan_views.xml",
+        "views/library_menu.xml",
+    ],
+    "application": True,
+    "installable": True,
+}

@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_library_book_reader,access.library.book.reader,model_library_book,group_library_reader,1,0,0,0
+access_library_category_reader,access.library.category.reader,model_library_category,group_library_reader,1,0,0,0
+access_library_book_user,access.library.book.user,model_library_book,group_library_user,1,1,0,0
+access_library_category_user,access.library.category.user,model_library_category,group_library_user,1,0,0,0
+access_library_member_user,access.library.member.user,model_library_member,group_library_user,1,1,1,0
+access_library_loan_user,access.library.loan.user,model_library_loan,group_library_user,1,1,1,0
+access_library_book_manager,access.library.book.manager,model_library_book,group_library_manager,1,1,1,1
+access_library_category_manager,access.library.category.manager,model_library_category,group_library_manager,1,1,1,1
+access_library_member_manager,access.library.member.manager,model_library_member,group_library_manager,1,1,1,1
+access_library_loan_manager,access.library.loan.manager,model_library_loan,group_library_manager,1,1,1,1
+access_library_borrow_wizard_user,access.library.borrow.wizard.user,model_library_borrow_wizard,group_library_user,1,1,1,1
+access_library_borrow_wizard_manager,access.library.borrow.wizard.manager,model_library_borrow_wizard,group_library_manager,1,1,1,1

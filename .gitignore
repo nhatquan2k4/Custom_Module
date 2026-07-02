@@ -1,0 +1,11 @@
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
+odoo/
+*.log
+*.pid
+*.sqlite3
+filestore/
+sessions/
+odoo/odoo.conf

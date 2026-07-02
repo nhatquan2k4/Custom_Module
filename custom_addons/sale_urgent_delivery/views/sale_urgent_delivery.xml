@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_order_form_inherit_urgent_delivery" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.urgent.delivery</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_open_urgent_delivery_wizard"
+                        string="Duyet giao gap"
+                        type="object"
+                        class="btn-primary"
+                        invisible="urgent_delivery_state != 'to_approve'"/>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="delivery_priority"/>
+                <field name="requested_delivery_date"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

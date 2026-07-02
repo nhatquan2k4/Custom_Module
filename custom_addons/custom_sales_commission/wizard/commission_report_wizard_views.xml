@@ -1,0 +1,56 @@
+<odoo>
+    <record id="view_sales_commission_report_wizard_form" model="ir.ui.view">
+        <field name="name">sales.commission.report.wizard.form</field>
+        <field name="model">sales.commission.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Bao cao thuong">
+                <sheet>
+                    <group>
+                        <group>
+<!--                            <field name="name" readonly="1"/>-->
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                        <group>
+                            <field name="employee_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <button name="action_view_report"
+                            string="Xem bao cao"
+                            type="object"
+                            class="btn-primary"/>
+                    <notebook>
+                        <page string="Ket qua">
+                            <group>
+                                <group>
+                                    <field name="result_count"/>
+                                    <field name="sale_amount_total"/>
+                                    <field name="commission_amount_total"/>
+                                </group>
+                            </group>
+                            <field name="result_line_ids" readonly="1">
+                                <list>
+                                    <field name="employee_id"/>
+                                    <field name="sale_order_id"/>
+                                    <field name="order_date"/>
+                                    <field name="delivery_date"/>
+                                    <field name="sale_amount"/>
+                                    <field name="commission_rate"/>
+                                    <field name="commission_amount"/>
+                                    <field name="delivery_status_snapshot"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sales_commission_report_wizard" model="ir.actions.act_window">
+        <field name="name">Bao cao thuong</field>
+        <field name="res_model">sales.commission.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+    </record>
+</odoo>

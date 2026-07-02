@@ -1,0 +1,79 @@
+<odoo>
+    <record id="library_loan_view_list" model="ir.ui.view">
+        <field name="name">library.loan.list</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <list string="Loans">
+                <field name="name"/>
+                <field name="book_id"/>
+                <field name="member_id"/>
+                <field name="borrow_date"/>
+                <field name="expected_return_date"/>
+                <field name="return_date"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="library_loan_view_form" model="ir.ui.view">
+        <field name="name">library.loan.form</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <form string="Loan">
+                <header>
+                    <button name="action_confirm_borrow"
+                            string="Xac nhan muon Sach"
+                            type="object"
+                            class="oe_highlight"
+                            groups="library.group_library_user,library.group_library_manager"
+                            invisible="state != 'draft'"/>
+
+                    <button name="action_return_book"
+                            string="Tra Sach"
+                            type="object"
+                            class="oe_highlight"
+                            groups="library.group_library_user,library.group_library_manager"
+                            invisible="state != 'borrowed'"/>
+
+                    <field name="state"
+                           widget="statusbar"
+                           statusbar_visible="draft,borrowed,returned"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="book_id"/>
+                            <field name="member_id"/>
+                            <field name="borrow_date"/>
+                            <field name="expected_return_date"/>
+                            <field name="return_date"/>
+                        </group>
+                        <group>
+                            <field name="duration_days" readonly="1"/>
+                            <field name="late_days" readonly="1"/>
+                            <field name="late_fee" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="library_loan_view_search" model="ir.ui.view">
+        <field name="name">library.loan.search</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <search string="Loans">
+                <field name="name"/>
+                <field name="book_id"/>
+                <field name="member_id"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+</odoo>

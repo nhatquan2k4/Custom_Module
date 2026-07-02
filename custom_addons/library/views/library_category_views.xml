@@ -1,0 +1,40 @@
+<odoo>
+    <record id="library_category_view_list" model="ir.ui.view">
+        <field name="name">library.category.list</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <list string="Categories">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="book_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="library_category_view_form" model="ir.ui.view">
+        <field name="name">library.category.form</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <form string="Category">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="book_count" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>    
+    </record>
+
+    <record id="library_category_view_search" model="ir.ui.view">
+        <field name="name">library.category.search</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <search string="Categories">
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+</odoo>

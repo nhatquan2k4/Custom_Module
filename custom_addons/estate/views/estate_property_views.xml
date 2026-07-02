@@ -1,0 +1,101 @@
+<odoo>
+    <record id="estate_property_view_list" model="ir.ui.view">
+        <field name="name">estate.property.list</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <list string="Properties">
+                <field name="name"/>
+                <field name="postcode"/>
+                <field name="bedrooms"/>
+                <field name="living_area"/>
+                <field name="expected_price"/>
+                <field name="selling_price"/>
+                <field name="date_availability"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="estate_property_view_form" model="ir.ui.view">
+        <field name="name">estate.property.form</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form string="Property">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="property_type_id"/>
+                            <field name="tag_ids"/>
+                            <field name="postcode"/>
+                            <field name="date_availability"/>
+                        </group>
+                        <group>
+                            <field name="expected_price"/>
+                            <field name="selling_price"/>
+                            <field name="best_price"/>
+                            <field name="buyer_id"/>
+                            <field name="user_id"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Description">
+                            <group>
+                                <field name="description"/>
+                                <field name="bedrooms"/>
+                                <field name="living_area"/>
+                                <field name="facades"/>
+                                <field name="garage"/>
+                                <field name="garden"/>
+                                <field name="garden_area"/>
+                                <field name="total_area"/>
+                                <field name="garden_areas"/>
+                            </group>
+                        </page>
+                        <page string="Offers">
+                            <field name="offer_ids">
+                                <list editable="bottom">
+                                    <field name="price"/>
+                                    <field name="partner_id"/>
+                                    <field name="validity"/>
+                                    <field name="date_deadline"/>
+                                    <field name="status"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="estate_property_view_search" model="ir.ui.view">
+        <field name="name">estate.property.search</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <search string="Properties">
+                <field name="name"/>
+                <field name="postcode"/>
+                <field name="expected_price"/>
+                <field name="bedrooms"/>
+                <field name="living_area"/>
+
+                <filter string="Available"
+                        name="available"
+                        domain="['|', ('state', '=', 'new'), ('state', '=', 'offer_received')]"/>
+
+                <group>
+                    <filter string="Postcode"
+                            name="group_by_postcode"
+                            context="{'group_by': 'postcode'}"/>
+                    <filter string="Status"
+                            name="group_by_state"
+                            context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
+
+
+
