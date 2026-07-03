@@ -1,0 +1,126 @@
+<odoo>
+    <record id="testing_product_view_list" model="ir.ui.view">
+        <field name="name">testing.product.list</field>
+        <field name="model">testing.product</field>
+        <field name="arch" type="xml">
+            <list string="Testing Products" multi_edit="1">
+                <header>
+                    <button name="action_mark_done" type="object" string="Hoàn thành"/>
+                </header>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="stage_id"/>
+                <field name="responsible_id"/>
+                <field name="tester_id"/>
+                <field name="planned_release_date"/>
+                <field name="issue_count"/>
+                <field name="kanban_state" widget="badge"
+                       decoration-success="kanban_state == 'done'"
+                       decoration-danger="kanban_state == 'blocked'"
+                       decoration-muted="kanban_state == 'normal'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="testing_product_view_form" model="ir.ui.view">
+        <field name="name">testing.product.form</field>
+        <field name="model">testing.product</field>
+        <field name="arch" type="xml">
+            <form string="Testing Product">
+                <header>
+                    <button name="action_mark_done" type="object" string="Hoàn thành" class="oe_highlight"/>
+                    <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_issues" type="object" class="oe_stat_button" icon="fa-bug">
+                            <field name="issue_count" widget="statinfo" string="Issues"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="stage_id"/>
+                            <field name="kanban_state"/>
+                            <field name="responsible_id"/>
+                        </group>
+                        <group>
+                            <field name="tester_id"/>
+                            <field name="planned_release_date"/>
+                            <field name="color"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Issues">
+                            <field name="issue_ids" context="{'default_product_id': id}">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="tester_id"/>
+                                    <field name="reported_date"/>
+                                    <field name="priority"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="testing_product_view_kanban" model="ir.ui.view">
+        <field name="name">testing.product.kanban</field>
+        <field name="model">testing.product</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_id" highlight_color="color">
+                <field name="kanban_state"/>
+                <field name="issue_count"/>
+                <progressbar field="kanban_state" colors='{"done": "success", "blocked": "danger"}'/>
+                <templates>
+                    <t t-name="menu">
+                        <field name="color" widget="kanban_color_picker"/>
+                    </t>
+                    <t t-name="card">
+                        <field name="name" class="fw-bold"/>
+                        <div><field name="responsible_id"/></div>
+                        <div>Issues: <field name="issue_count"/></div>
+                        <footer>
+                            <field name="kanban_state" widget="state_selection"/>
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="testing_product_view_search" model="ir.ui.view">
+        <field name="name">testing.product.search</field>
+        <field name="model">testing.product</field>
+        <field name="arch" type="xml">
+            <search string="Testing Products">
+                <field name="name"/>
+                <field name="stage_id"/>
+                <field name="responsible_id"/>
+                <filter string="Blocked" name="blocked" domain="[('kanban_state', '=', 'blocked')]"/>
+                <filter string="Done" name="done" domain="[('stage_id.code', '=', 'done')]"/>
+                <group>
+                    <filter string="Stage" name="group_by_stage" context="{'group_by': 'stage_id'}"/>
+                    <filter string="Responsible" name="group_by_responsible" context="{'group_by': 'responsible_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_testing_product" model="ir.actions.act_window">
+        <field name="name">Testing Products</field>
+        <field name="res_model">testing.product</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="testing_product_view_search"/>
+    </record>
+</odoo>

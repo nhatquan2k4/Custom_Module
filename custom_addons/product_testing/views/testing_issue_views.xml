@@ -1,0 +1,98 @@
+<odoo>
+    <record id="testing_issue_view_list" model="ir.ui.view">
+        <field name="name">testing.issue.list</field>
+        <field name="model">testing.issue</field>
+        <field name="arch" type="xml">
+            <list string="Testing Issues"
+                  decoration-danger="priority == '3'"
+                  decoration-warning="priority == '2'"
+                  decoration-muted="state in ['fixed', 'cancelled']">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="tester_id"/>
+                <field name="reported_date"/>
+                <field name="priority" widget="badge"
+                       decoration-danger="priority == '3'"
+                       decoration-warning="priority == '2'"
+                       decoration-info="priority in ['0', '1']"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'fixed'"
+                       decoration-info="state in ['new', 'confirmed']"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="testing_issue_view_form" model="ir.ui.view">
+        <field name="name">testing.issue.form</field>
+        <field name="model">testing.issue</field>
+        <field name="arch" type="xml">
+            <form string="Testing Issue">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="product_id"/>
+                            <field name="tester_id"/>
+                            <field name="reported_date"/>
+                        </group>
+                        <group>
+                            <field name="priority"/>
+                            <field name="state"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Resolution">
+                            <field name="resolution"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="testing_issue_view_search" model="ir.ui.view">
+        <field name="name">testing.issue.search</field>
+        <field name="model">testing.issue</field>
+        <field name="arch" type="xml">
+            <search string="Testing Issues">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="tester_id"/>
+                <field name="priority"/>
+                <field name="state"/>
+
+                <filter string="Open"
+                        name="open"
+                        domain="[('state', 'in', ['new', 'confirmed'])]"/>
+                <filter string="Critical"
+                        name="critical"
+                        domain="[('priority', '=', '3')]"/>
+
+                <group>
+                    <filter string="Product"
+                            name="group_by_product"
+                            context="{'group_by': 'product_id'}"/>
+                    <filter string="Status"
+                            name="group_by_state"
+                            context="{'group_by': 'state'}"/>
+                    <filter string="Priority"
+                            name="group_by_priority"
+                            context="{'group_by': 'priority'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_testing_issue" model="ir.actions.act_window">
+        <field name="name">Testing Issues</field>
+        <field name="res_model">testing.issue</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="testing_issue_view_search"/>
+        <field name="context">{'search_default_open': 1}</field>
+    </record>
+</odoo>

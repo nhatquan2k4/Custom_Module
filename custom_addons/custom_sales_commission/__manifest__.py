@@ -14,6 +14,7 @@
         "wizard/commission_approval_wizard_views.xml",
         "wizard/commission_report_wizard_views.xml",
         "views/sales_commission_views.xml",
+        "views/test1_views.xml",
     ],
     "installable": True,
     "application": True,

@@ -3,3 +3,5 @@ access_sales_commission_user,access.sales.commission.user,model_sales_commission
 access_sales_commission_line_user,access.sales.commission.line.user,model_sales_commission_line,base.group_user,1,1,1,1
 access_sales_commission_approval_wizard_user,access.sales.commission.approval.wizard.user,model_sales_commission_approval_wizard,base.group_user,1,1,1,1
 access_sales_commission_report_wizard_user,access.sales.commission.report.wizard.user,model_sales_commission_report_wizard,base.group_user,1,1,1,1
+access_test1_user,access.test.1.user,model_test_1,base.group_user,1,1,1,1
+access_test2_user,access.test.2.user,model_test_2,base.group_user,1,1,1,1
