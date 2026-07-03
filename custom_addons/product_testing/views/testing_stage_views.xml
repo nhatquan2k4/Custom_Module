@@ -1,0 +1,37 @@
+<odoo>
+    <record id="testing_stage_view_list" model="ir.ui.view">
+        <field name="name">testing.stage.list</field>
+        <field name="model">testing.stage</field>
+        <field name="arch" type="xml">
+            <list string="Testing Stages" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="fold"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="testing_stage_view_form" model="ir.ui.view">
+        <field name="name">testing.stage.form</field>
+        <field name="model">testing.stage</field>
+        <field name="arch" type="xml">
+            <form string="Testing Stage">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="fold"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_testing_stage" model="ir.actions.act_window">
+        <field name="name">Testing Stages</field>
+        <field name="res_model">testing.stage</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

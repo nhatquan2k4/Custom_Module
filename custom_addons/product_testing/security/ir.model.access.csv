@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_testing_product_user,access_testing_product_user,model_testing_product,base.group_user,1,1,1,1
+access_testing_stage_user,access_testing_stage_user,model_testing_stage,base.group_user,1,1,1,1
+access_testing_issue_user,access_testing_issue_user,model_testing_issue,base.group_user,1,1,1,1
