@@ -9,3 +9,7 @@ odoo/
 filestore/
 sessions/
 odoo/odoo.conf
+*.pyc
+.pylint.d/
+.mypy_cache/
+.ruff_cache/

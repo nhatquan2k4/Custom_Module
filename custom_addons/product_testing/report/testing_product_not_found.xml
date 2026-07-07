@@ -1,0 +1,10 @@
+<odoo>
+    <template id="testing_product_not_found" name="Testing Product Not Found">
+        <t t-call="web.frontend_layout">
+            <t t-set="title" t-value="'Product Not Found'"/>
+            <div class="container mt-5">
+                <h1 class="h3">Product not found</h1>
+            </div>
+        </t>
+    </template>
+</odoo>

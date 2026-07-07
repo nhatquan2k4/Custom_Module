@@ -6,7 +6,7 @@
             <list string="Testing Stages" editable="bottom">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
-                <field name="code"/>
+                <field name="is_done"/>
                 <field name="fold"/>
             </list>
         </field>
@@ -20,8 +20,8 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="code"/>
                         <field name="sequence"/>
+                        <field name="is_done"/>
                         <field name="fold"/>
                     </group>
                 </sheet>
