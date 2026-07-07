@@ -1,0 +1,8 @@
+repos:
+  - repo: https://github.com/OCA/pylint-odoo
+    rev: v10.0.6
+    hooks:
+      - id: pylint_odoo
+        args:
+          - --rcfile=.pylintrc
+        files: ^custom_addons/.*\.py$

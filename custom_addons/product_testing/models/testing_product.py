@@ -1,4 +1,4 @@
-from odoo import api, fields, models, _
+from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 class TestingProduct(models.Model):
@@ -12,12 +12,11 @@ class TestingProduct(models.Model):
         )
 
     name = fields.Char(string="Product", required = True)
-    sequence = fields.Integer(string="Sequence", default=10)
+    sequence = fields.Integer(default=10)
     active = fields.Boolean(default=True)
     stage_id = fields.Many2one(
         "testing.stage",
-        string="Stage",
-        default = _default_stage_id,
+        default=lambda self: self._default_stage_id(),
         group_expand="_read_group_stage_ids",
         ondelete="restrict",
         required=True,
@@ -30,19 +29,17 @@ class TestingProduct(models.Model):
             ('blocked', 'Blocked'),
             ("done", "Done"),
         ],
-        string="Kanban State",
         default="normal",
         required=True,
     )
     color = fields.Integer(string="Color Index")
     responsible_id = fields.Many2one(
         "res.users",
-        string="Responsible",
         default=lambda self: self.env.user,
     )
     tester_id = fields.Many2one("res.partner", string="Main Tester")
-    planned_release_date = fields.Date(string="Planned Release Date")
-    description = fields.Text(string="Description")
+    planned_release_date = fields.Date()
+    description = fields.Text()
     issue_ids = fields.One2many(
         "testing.issue",
         "product_id",
@@ -82,17 +79,11 @@ class TestingProduct(models.Model):
         return action
 
     def action_mark_done(self):
-        done_stage = self.env.ref(
-            "product_testing.stage_done",
-            raise_if_not_found=False,
+        done_stage = self.env["testing.stage"].search(
+            [("is_done", "=", True)],   
         )
         if not done_stage:
-            done_stage = self.env["testing.stage"].search(
-                [("code", "=", "done")],
-                limit=1,
-            )
-        if not done_stage:
-            raise UserError(_("The completed stage has not been configured."))
+            raise UserError(self.env._("The completed stage has not been configured."))
 
         self.write({
             "stage_id": done_stage.id,
@@ -102,5 +93,15 @@ class TestingProduct(models.Model):
 
     def write(self, vals):
         if vals.get("stage_id") and "kanban_state" not in vals:
-            vals["kanban_state"] = "normal"
+            stage = self.env["testing.stage"].browse(vals["stage_id"])
+            vals["kanban_state"] = "done" if stage.is_done else "normal"
         return super().write(vals)
+
+
+    def action_open_report(self):
+        self.ensure_one()
+        return {
+            "type": "ir.actions.act_url",
+            "url": "/testing/report/%s" % self.id,
+            "target": "new",
+        }

@@ -4,9 +4,6 @@
         <field name="model">testing.product</field>
         <field name="arch" type="xml">
             <list string="Testing Products" multi_edit="1">
-                <header>
-                    <button name="action_mark_done" type="object" string="Hoàn thành"/>
-                </header>
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="stage_id"/>
@@ -32,7 +29,16 @@
                     <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
+
                     <div class="oe_button_box" name="button_box">
+                        <button name="action_open_report"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-external-link">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Xem báo cáo</span>
+                            </div>
+                        </button>
                         <button name="action_view_issues" type="object" class="oe_stat_button" icon="fa-bug">
                             <field name="issue_count" widget="statinfo" string="Issues"/>
                         </button>
@@ -108,7 +114,7 @@
                 <field name="stage_id"/>
                 <field name="responsible_id"/>
                 <filter string="Blocked" name="blocked" domain="[('kanban_state', '=', 'blocked')]"/>
-                <filter string="Done" name="done" domain="[('stage_id.code', '=', 'done')]"/>
+                <filter string="Done" name="done" domain="[('stage_id.is_done', '=', True)]"/>
                 <group>
                     <filter string="Stage" name="group_by_stage" context="{'group_by': 'stage_id'}"/>
                     <filter string="Responsible" name="group_by_responsible" context="{'group_by': 'responsible_id'}"/>
@@ -122,5 +128,14 @@
         <field name="res_model">testing.product</field>
         <field name="view_mode">kanban,list,form</field>
         <field name="search_view_id" ref="testing_product_view_search"/>
+    </record>
+
+    <record id="action_testing_product_mark_done_server" model="ir.actions.server">
+        <field name="name">Hoàn thành</field>
+        <field name="model_id" ref="model_testing_product"/>
+        <field name="binding_model_id" ref="model_testing_product"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">records.action_mark_done()</field>
     </record>
 </odoo>

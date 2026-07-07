@@ -1,0 +1,77 @@
+[MASTER]
+load-plugins=pylint_odoo
+score=no
+
+# Giúp pylint import được package odoo từ thư mục ./odoo
+init-hook='import sys, os; sys.path.insert(0, os.path.abspath("odoo")); sys.path.insert(0, os.path.abspath("custom_addons"))'
+
+ignore=.venv,odoo,.git
+
+[ODOOLINT]
+valid-odoo-versions=19.0
+
+manifest-required-keys=license
+manifest-deprecated-keys=description,active
+license-allowed=LGPL-3,AGPL-3,GPL-3,GPL-3 or any later version
+
+[MESSAGES CONTROL]
+disable=all
+
+enable=
+    anomalous-backslash-in-string,
+    assignment-from-none,
+    attribute-deprecated,
+    dangerous-default-value,
+    development-status-allowed,
+    duplicate-key,
+    eval-used,
+    license-allowed,
+    manifest-author-string,
+    manifest-deprecated-key,
+    manifest-required-author,
+    manifest-required-key,
+    manifest-version-format,
+    method-compute,
+    method-inverse,
+    method-required-super,
+    method-search,
+    pointless-statement,
+    pointless-string-statement,
+    print-used,
+    redundant-keyword-arg,
+    return-in-init,
+    sql-injection,
+    translation-field,
+    translation-required,
+    unreachable,
+    attribute-string-redundant,
+    context-overridden,
+    except-pass,
+    invalid-commit,
+    missing-return,
+    odoo-addons-relative-import,
+    renamed-field-parameter,
+    resource-not-exist,
+    translation-contains-variable,
+    translation-positional-used,
+    external-request-timeout,
+    deprecated-name-get,
+    deprecated-odoo-model-method,
+    inheritable-method-lambda,
+    inheritable-method-string,
+    invalid-email,
+    missing-odoo-file,
+    no-raise-unlink,
+    no-search-all,
+    no-wizard-in-models,
+    prohibited-method-override,
+    prefer-env-translation,
+    translation-format-interpolation,
+    translation-fstring-interpolation,
+    translation-not-lazy,
+    no-write-in-compute
+
+[REPORTS]
+msg-template={path}:{line}: [{msg_id}({symbol}), {obj}] {msg}
+output-format=colorized
+reports=no

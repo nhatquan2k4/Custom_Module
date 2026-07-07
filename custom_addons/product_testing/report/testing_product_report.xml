@@ -1,0 +1,62 @@
+<odoo>
+    <template id="testing_product_report" name="Testing Product Report">
+            <t t-set="title" t-value="'Testing Report - %s' % product.name"/>
+            <div class="container mt-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h1 class="h3">
+                            <span t-field="product.name"/>
+                        </h1>
+                        <p>
+                            <strong>Stage:</strong>
+                            <span class="badge text-bg-primary" t-field="product.stage_id"/>
+                        </p>
+                        <p>
+                            <strong>Responsible:</strong>
+                            <span t-field="product.responsible_id"/>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        Issues
+                    </div>
+                    <div class="card-body">
+                        <table t-if="issues" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Issue</th>
+                                    <th>Tester</th>
+                                    <th>Reported Date</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="issues" t-as="issue">
+                                    <td>
+                                        <span t-field="issue.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="issue.tester_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="issue.reported_date"/>
+                                    </td>
+                                    <td>
+                                        <span class="badge text-bg-warning" t-field="issue.priority"/>
+                                    </td>
+                                    <td>
+                                        <span class="badge text-bg-info" t-field="issue.state"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p t-else="" class="mb-0">No issues found.</p>
+                    </div>
+                </div>
+            </div>
+    </template>
+</odoo>
