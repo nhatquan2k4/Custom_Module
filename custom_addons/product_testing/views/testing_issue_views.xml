@@ -11,6 +11,7 @@
                 <field name="product_id"/>
                 <field name="tester_id"/>
                 <field name="reported_date"/>
+                <field name="activity_ids" string="Next Activity" widget="list_activity" optional="show"/>
                 <field name="priority" widget="badge"
                        decoration-danger="priority == '3'"
                        decoration-warning="priority == '2'"
@@ -51,6 +52,7 @@
                         </page>
                     </notebook>
                 </sheet>
+                <chatter/>
             </form>
         </field>
     </record>

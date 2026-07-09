@@ -3,6 +3,7 @@ from odoo.exceptions import UserError
 
 class TestingProduct(models.Model):
     _name = "testing.product"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Testing Product"
 
     def _default_stage_id(self):
@@ -21,6 +22,7 @@ class TestingProduct(models.Model):
         ondelete="restrict",
         required=True,
         copy=False,
+        tracking=True,
     )
 
     kanban_state = fields.Selection(
@@ -31,14 +33,20 @@ class TestingProduct(models.Model):
         ],
         default="normal",
         required=True,
+        tracking=True,
     )
     color = fields.Integer(string="Color Index")
     responsible_id = fields.Many2one(
         "res.users",
         default=lambda self: self.env.user,
+        tracking=True,
     )
-    tester_id = fields.Many2one("res.partner", string="Main Tester")
-    planned_release_date = fields.Date()
+    tester_id = fields.Many2one(
+        "res.partner",
+        string="Main Tester",
+        tracking=True,
+    )
+    planned_release_date = fields.Date(tracking=True)
     description = fields.Text()
     issue_ids = fields.One2many(
         "testing.issue",
@@ -72,6 +80,10 @@ class TestingProduct(models.Model):
         action = self.env["ir.actions.actions"]._for_xml_id(
             "product_testing.action_testing_issue"
         )
+        action["name"] = self.env._(
+            "Issues for %(product)s",
+            product=self.display_name,
+        )
         action["domain"] = [("product_id", "=", self.id)]
         action["context"] = {
             "default_product_id": self.id,
@@ -80,7 +92,8 @@ class TestingProduct(models.Model):
 
     def action_mark_done(self):
         done_stage = self.env["testing.stage"].search(
-            [("is_done", "=", True)],   
+            [("is_done", "=", True)],
+            limit=1,
         )
         if not done_stage:
             raise UserError(self.env._("The completed stage has not been configured."))
@@ -89,6 +102,15 @@ class TestingProduct(models.Model):
             "stage_id": done_stage.id,
             "kanban_state": "done",
         })
+
+        for product in self:
+            product.message_post(
+                body=self.env._(
+                    "Product testing '%(product)s' has been marked as done in stage '%(stage)s'.",
+                    product=product.display_name,
+                    stage=done_stage.display_name,
+                )
+            )
         return True
 
     def write(self, vals):

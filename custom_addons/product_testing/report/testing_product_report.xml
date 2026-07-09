@@ -1,11 +1,12 @@
 <odoo>
     <template id="testing_product_report" name="Testing Product Report">
-            <t t-set="title" t-value="'Testing Report - %s' % product.name"/>
+        <t t-call="web.frontend_layout">
+            <t t-set="title" t-value="report_title"/>
             <div class="container mt-4">
                 <div class="card mb-4">
                     <div class="card-body">
                         <h1 class="h3">
-                            <span t-field="product.name"/>
+                            <span t-out="report_title"/>
                         </h1>
                         <p>
                             <strong>Stage:</strong>
@@ -58,5 +59,6 @@
                     </div>
                 </div>
             </div>
+        </t>
     </template>
 </odoo>
