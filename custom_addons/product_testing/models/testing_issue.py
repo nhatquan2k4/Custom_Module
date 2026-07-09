@@ -3,20 +3,22 @@ from odoo import fields, models
 
 class TestingIssue(models.Model):
     _name = "testing.issue"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Testing Issue"
     _order = "priority desc, reported_date desc, id desc"
 
-    name = fields.Char(string="Issue", required=True)
+    name = fields.Char(string="Issue", required=True, tracking=True)
     product_id = fields.Many2one(
         "testing.product",
         string="Testing Product",
         required=True,
         ondelete="cascade",
+        tracking=True,
     )
-    tester_id = fields.Many2one("res.partner", string="Tester")
+    tester_id = fields.Many2one("res.partner", tracking=True)
     reported_date = fields.Date(
-        string="Reported Date",
         default=fields.Date.context_today,
+        tracking=True,
     )
     priority = fields.Selection(
         [
@@ -25,9 +27,9 @@ class TestingIssue(models.Model):
             ("2", "High"),
             ("3", "Critical"),
         ],
-        string="Priority",
         default="1",
         required=True,
+        tracking=True,
     )
     state = fields.Selection(
         [
@@ -39,6 +41,7 @@ class TestingIssue(models.Model):
         string="Status",
         default="new",
         required=True,
+        tracking=True,
     )
-    description = fields.Text(string="Description")
-    resolution = fields.Text(string="Resolution")
+    description = fields.Text()
+    resolution = fields.Text()

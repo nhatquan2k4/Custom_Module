@@ -7,7 +7,7 @@ class TestingStage(models.Model):
     _order = 'sequence,id'
 
 
-    name = fields.Char(required=True)
+    name = fields.Char(required=True, translate=True)
     sequence = fields.Integer(default = 10)
     fold = fields.Boolean(string="Folded in Kanban")
     is_done = fields.Boolean(string="Is Done Stage?")

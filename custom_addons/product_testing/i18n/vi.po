@@ -1,0 +1,549 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_testing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-09 03:25+0000\n"
+"PO-Revision-Date: 2026-07-09 03:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_testing
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_form
+msgid "<span class=\"o_stat_text\">Open Report</span>"
+msgstr "<span class=\"o_stat_text\">Xem báo cáo</span>"
+
+#. module: product_testing
+#: model:testing.stage,name:product_testing.stage_analysis
+msgid "Analysis"
+msgstr "Đang phân tích"
+
+#. module: product_testing
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_report
+msgid "<strong>Responsible:</strong>"
+msgstr "<strong>Người phụ trách:</strong>"
+
+#. module: product_testing
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_report
+msgid "<strong>Stage:</strong>"
+msgstr "<strong>Giai đoạn:</strong>"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__active
+msgid "Active"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_product__kanban_state__blocked
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_search
+msgid "Blocked"
+msgstr "Bị chặn"
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_issue__state__cancelled
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: product_testing
+#. odoo-python
+#: code:addons/product_testing/models/testing_stage.py:0
+msgid ""
+"Changing the value of 'Is Done Stage?' will update the Kanban state of "
+"products currently in this stage on saving."
+msgstr ""
+"Việc thay đổi giá trị 'Là giai đoạn hoàn thành?' sẽ cập nhật trạng thái "
+"Kanban của các sản phẩm hiện đang ở giai đoạn này khi lưu."
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__color
+msgid "Color Index"
+msgstr "Chỉ số màu"
+
+#. module: product_testing
+#: model:ir.ui.menu,name:product_testing.menu_testing_configuration
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_issue__state__confirmed
+msgid "Confirmed"
+msgstr "Đã xác nhận"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__create_uid
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__create_uid
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__create_date
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__create_date
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_issue__priority__3
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_search
+msgid "Critical"
+msgstr "Nghiêm trọng"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__description
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__description
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_form
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_form
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__display_name
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__display_name
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: product_testing
+#. odoo-python
+#: code:addons/product_testing/models/testing_stage.py:0
+msgid "Do you really want to update this stage?"
+msgstr "Bạn có chắc muốn cập nhật giai đoạn này không?"
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_product__kanban_state__done
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_search
+msgid "Done"
+msgstr "Hoàn thành"
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_issue__state__fixed
+msgid "Fixed"
+msgstr "Đã sửa"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__fold
+msgid "Folded in Kanban"
+msgstr "Thu gọn trong Kanban"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,help:product_testing.field_testing_product__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_issue__priority__2
+msgid "High"
+msgstr "Cao"
+
+#. module: product_testing
+#: model:ir.actions.server,name:product_testing.action_testing_product_mark_done_server
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_form
+msgid "Mark as Done"
+msgstr "Hoàn thành"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__id
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__id
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__id
+msgid "ID"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,help:product_testing.field_testing_product__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,help:product_testing.field_testing_product__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,help:product_testing.field_testing_product__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__is_done
+msgid "Is Done Stage?"
+msgstr "Là giai đoạn hoàn thành?"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__name
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_report
+msgid "Issue"
+msgstr "Lỗi"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__issue_count
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__issue_ids
+#: model:ir.ui.menu,name:product_testing.menu_testing_issue
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_report
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_form
+msgid "Issues"
+msgstr "Lỗi"
+
+#. module: product_testing
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_kanban
+msgid "Issues:"
+msgstr "Lỗi:"
+
+#. module: product_testing
+#. odoo-python
+#: code:addons/product_testing/models/testing_product.py:0
+msgid "Issues for %(product)s"
+msgstr "Lỗi của %(product)s"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__kanban_state
+msgid "Kanban State"
+msgstr "Trạng thái Kanban"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__write_uid
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__write_uid
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__write_date
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__write_date
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_issue__priority__0
+msgid "Low"
+msgstr "Thấp"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__tester_id
+msgid "Main Tester"
+msgstr "Người kiểm thử chính"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: product_testing
+#: model:testing.stage,name:product_testing.stage_development
+msgid "Development"
+msgstr "Đang phát triển"
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_issue__state__new
+msgid "New"
+msgstr "Mới"
+
+#. module: product_testing
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_list
+msgid "Next Activity"
+msgstr "Hoạt động tiếp theo"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: product_testing
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_report
+msgid "No issues found."
+msgstr "Không tìm thấy lỗi."
+
+#. module: product_testing
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_issue__priority__1
+#: model:ir.model.fields.selection,name:product_testing.selection__testing_product__kanban_state__normal
+msgid "Normal"
+msgstr "Bình thường"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,help:product_testing.field_testing_product__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,help:product_testing.field_testing_product__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: product_testing
+#. odoo-python
+#: code:addons/product_testing/models/testing_stage.py:0
+msgid "Only one stage can be marked as done."
+msgstr "Chỉ một giai đoạn được đánh dấu là hoàn thành."
+
+#. module: product_testing
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_search
+msgid "Open"
+msgstr "Đang mở"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__planned_release_date
+msgid "Planned Release Date"
+msgstr "Ngày phát hành dự kiến"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__priority
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_search
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_report
+msgid "Priority"
+msgstr "Độ ưu tiên"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__name
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_search
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: product_testing
+#: model:ir.ui.menu,name:product_testing.menu_product_testing_root
+msgid "Product Testing"
+msgstr "Kiểm thử sản phẩm"
+
+#. module: product_testing
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_not_found
+msgid "Product Not Found"
+msgstr "Không tìm thấy sản phẩm"
+
+#. module: product_testing
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_not_found
+msgid "Product not found"
+msgstr "Không tìm thấy sản phẩm"
+
+#. module: product_testing
+#. odoo-python
+#: code:addons/product_testing/models/testing_product.py:0
+msgid ""
+"Product testing '%(product)s' has been marked as done in stage '%(stage)s'."
+msgstr ""
+"Kiểm thử sản phẩm '%(product)s' đã được đánh dấu hoàn thành ở giai đoạn "
+"'%(stage)s'."
+
+#. module: product_testing
+#: model:ir.ui.menu,name:product_testing.menu_testing_product
+msgid "Products"
+msgstr "Sản phẩm"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__reported_date
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_report
+msgid "Reported Date"
+msgstr "Ngày báo cáo"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__resolution
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_form
+msgid "Resolution"
+msgstr "Cách xử lý"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__responsible_id
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_search
+msgid "Responsible"
+msgstr "Người phụ trách"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__sequence
+#: model:ir.model.fields,field_description:product_testing.field_testing_stage__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_product__stage_id
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_search
+msgid "Stage"
+msgstr "Giai đoạn"
+
+#. module: product_testing
+#: model:ir.ui.menu,name:product_testing.menu_testing_stage
+msgid "Stages"
+msgstr "Giai đoạn"
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__state
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_search
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_report
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: product_testing
+#: model:ir.model.fields,help:product_testing.field_testing_product__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: product_testing
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__tester_id
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_report
+msgid "Tester"
+msgstr "Người kiểm thử"
+
+#. module: product_testing
+#: model:ir.model,name:product_testing.model_testing_issue
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_form
+msgid "Testing Issue"
+msgstr "Lỗi kiểm thử"
+
+#. module: product_testing
+#: model:ir.actions.act_window,name:product_testing.action_testing_issue
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_list
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_issue_view_search
+msgid "Testing Issues"
+msgstr "Lỗi kiểm thử"
+
+#. module: product_testing
+#: model:ir.model,name:product_testing.model_testing_product
+#: model:ir.model.fields,field_description:product_testing.field_testing_issue__product_id
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_form
+msgid "Testing Product"
+msgstr "Sản phẩm kiểm thử"
+
+#. module: product_testing
+#: model:ir.actions.act_window,name:product_testing.action_testing_product
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_list
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_product_view_search
+msgid "Testing Products"
+msgstr "Sản phẩm kiểm thử"
+
+#. module: product_testing
+#. odoo-python
+#: code:addons/product_testing/controllers/testing_report.py:0
+msgid "Testing Report - %(product)s"
+msgstr "Báo cáo kiểm thử - %(product)s"
+
+#. module: product_testing
+#: model:ir.model,name:product_testing.model_testing_stage
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_stage_view_form
+msgid "Testing Stage"
+msgstr "Giai đoạn kiểm thử"
+
+#. module: product_testing
+#: model:ir.actions.act_window,name:product_testing.action_testing_stage
+#: model_terms:ir.ui.view,arch_db:product_testing.testing_stage_view_list
+msgid "Testing Stages"
+msgstr "Giai đoạn kiểm thử"
+
+#. module: product_testing
+#. odoo-python
+#: code:addons/product_testing/models/testing_product.py:0
+msgid "The completed stage has not been configured."
+msgstr "Giai đoạn hoàn thành chưa được cấu hình."
+
+#. module: product_testing
+#: model:ir.model.fields,help:product_testing.field_testing_product__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""

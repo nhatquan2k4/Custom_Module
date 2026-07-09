@@ -3,7 +3,7 @@
     "summary": "Manage product testing stages and tester issues",
     "author": "Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "depends": ["base", "web"],
+    "depends": ["base", "web", "mail"],
     "data": [
         "security/ir.model.access.csv",
         "data/testing_stage_data.xml",
